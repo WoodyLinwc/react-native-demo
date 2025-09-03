@@ -15,21 +15,15 @@ function App() {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
+      <View className="flex-1 items-center justify-center bg-white">
+        <Text className="text-xl font-bold text-blue-500">
+          Welcome to NativeWind!
+        </Text>
+        <Text className="text-base text-gray-600 mt-4">
+          NativeWind is working correctly!12
+        </Text>
+      </View>
     </SafeAreaProvider>
-  );
-}
-
-function AppContent() {
-  return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text className="text-xl font-bold text-blue-500">
-        Welcome to NativeWind!!
-      </Text>
-      <Text className="text-base text-gray-600 mt-4">
-        NativeWind is working correctly!
-      </Text>
-    </View>
   );
 }
 

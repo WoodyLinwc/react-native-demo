@@ -20,7 +20,7 @@ function App() {
           Welcome to NativeWind!
         </Text>
         <Text className="text-base text-gray-600 mt-4">
-          NativeWind is working correctly!12
+          NativeWind is working correctly!
         </Text>
       </View>
     </SafeAreaProvider>

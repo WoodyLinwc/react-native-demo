@@ -39,7 +39,9 @@ Make sure you have emulator setup already for example, Pixel_6, verify it in ter
 
 ## 4. VS Code Configuration
 
-For example
+Update your settings.json to ensure VS Code terminal uses the correct Java and Android environment.
+
+For example:
 
 ```
 {
@@ -61,6 +63,20 @@ For example
   }
 }
 
+```
+
+## 5. Run Code
+
+Inside the module directory, open a terminal, run
+
+```
+npm start
+```
+
+Open another terminal, do
+
+```
+npm run android
 ```
 
 ## 5. Notes

@@ -1,5 +1,5 @@
 /**
- * Sample React Native App with Navigation
+ * Sample React Native App with Tab and Stack Navigation
  * https://github.com/facebook/react-native
  *
  * @format
@@ -17,8 +17,12 @@ import HomeScreen from './src/screens/HomeScreen';
 import CameraScreen from './src/screens/CameraScreen';
 import SupplyScreen from './src/screens/SupplyScreen';
 
+// Import tab navigator
+import TabNavigator from './src/navigation/TabNavigator';
+
 // Define the navigation stack parameter list
 export type RootStackParamList = {
+  Main: undefined;
   Home: undefined;
   Camera: undefined;
   Supply: undefined;
@@ -26,12 +30,18 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>();
 
+// Main App Component
 function App(): React.JSX.Element {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle="dark-content" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Main">
+          <Stack.Screen
+            name="Main"
+            component={TabNavigator}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Home"
             component={HomeScreen}

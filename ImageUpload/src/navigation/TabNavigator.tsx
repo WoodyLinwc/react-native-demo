@@ -18,39 +18,30 @@ export type TabParamList = {
   Profile: undefined;
 };
 
-// Type for tab icon props
-interface TabIconProps {
-  route: { name: keyof TabParamList };
+// Individual icon components for each tab
+const DashboardIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="dashboard" size={size} color={color} />
+);
+
+const WorkOrdersIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="assignment" size={size} color={color} />
+);
+
+const InventoryIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="inventory-2" size={size} color={color} />
+);
+
+const CommunicationIcon = ({
+  color,
+  size,
+}: {
   color: string;
   size: number;
-}
+}) => <Icon name="notifications" size={size} color={color} />;
 
-// Icon component - defined outside of TabNavigator
-const TabIcon: React.FC<TabIconProps> = ({ route, color, size }) => {
-  let iconName: string;
-
-  switch (route.name) {
-    case 'Dashboard':
-      iconName = 'dashboard';
-      break;
-    case 'WorkOrders':
-      iconName = 'assignment';
-      break;
-    case 'Inventory':
-      iconName = 'inventory-2';
-      break;
-    case 'Communication':
-      iconName = 'notifications';
-      break;
-    case 'Profile':
-      iconName = 'person';
-      break;
-    default:
-      iconName = 'help';
-  }
-
-  return <Icon name={iconName} size={size} color={color} />;
-};
+const ProfileIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="person" size={size} color={color} />
+);
 
 const Tab = createBottomTabNavigator<TabParamList>();
 
@@ -58,7 +49,7 @@ const Tab = createBottomTabNavigator<TabParamList>();
 function TabNavigator(): React.JSX.Element {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
+      screenOptions={{
         tabBarActiveTintColor: '#3b82f6',
         tabBarInactiveTintColor: '#6b7280',
         tabBarStyle: {
@@ -68,10 +59,7 @@ function TabNavigator(): React.JSX.Element {
           paddingBottom: 5,
           height: 60,
         },
-        tabBarIcon: ({ color, size }) => (
-          <TabIcon route={route} color={color} size={size} />
-        ),
-      })}
+      }}
     >
       <Tab.Screen
         name="Dashboard"
@@ -79,6 +67,7 @@ function TabNavigator(): React.JSX.Element {
         options={{
           title: 'Home',
           tabBarLabel: 'Home',
+          tabBarIcon: DashboardIcon,
         }}
       />
       <Tab.Screen
@@ -87,6 +76,7 @@ function TabNavigator(): React.JSX.Element {
         options={{
           title: 'Work Orders',
           tabBarLabel: 'Tasks',
+          tabBarIcon: WorkOrdersIcon,
         }}
       />
       <Tab.Screen
@@ -95,6 +85,7 @@ function TabNavigator(): React.JSX.Element {
         options={{
           title: 'Inventory',
           tabBarLabel: 'Parts',
+          tabBarIcon: InventoryIcon,
         }}
       />
       <Tab.Screen
@@ -103,6 +94,7 @@ function TabNavigator(): React.JSX.Element {
         options={{
           title: 'Communication',
           tabBarLabel: 'Notifications',
+          tabBarIcon: CommunicationIcon,
         }}
       />
       <Tab.Screen
@@ -111,6 +103,7 @@ function TabNavigator(): React.JSX.Element {
         options={{
           title: 'Profile',
           tabBarLabel: 'More',
+          tabBarIcon: ProfileIcon,
         }}
       />
     </Tab.Navigator>

@@ -14,6 +14,19 @@ export type DrawerParamList = {
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
+// Icon components defined outside of the render function
+const HomeIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="home" size={size} color={color} />
+);
+
+const AccountIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="account-circle" size={size} color={color} />
+);
+
+const AnalyticsIcon = ({ color, size }: { color: string; size: number }) => (
+  <Icon name="analytics" size={size} color={color} />
+);
+
 // Drawer Navigator Component
 function DrawerNavigator(): React.JSX.Element {
   return (
@@ -48,9 +61,7 @@ function DrawerNavigator(): React.JSX.Element {
         options={{
           title: 'Dashboard',
           drawerLabel: 'Home',
-          drawerIcon: ({ color, size }) => (
-            <Icon name="home" size={size} color={color} />
-          ),
+          drawerIcon: HomeIcon,
         }}
       />
       <Drawer.Screen
@@ -59,9 +70,7 @@ function DrawerNavigator(): React.JSX.Element {
         options={{
           title: 'Account & Settings',
           drawerLabel: 'Account & Settings',
-          drawerIcon: ({ color, size }) => (
-            <Icon name="account-circle" size={size} color={color} />
-          ),
+          drawerIcon: AccountIcon,
         }}
       />
       <Drawer.Screen
@@ -70,9 +79,7 @@ function DrawerNavigator(): React.JSX.Element {
         options={{
           title: 'Reports & Analytics',
           drawerLabel: 'Reports & Analytics',
-          drawerIcon: ({ color, size }) => (
-            <Icon name="analytics" size={size} color={color} />
-          ),
+          drawerIcon: AnalyticsIcon,
         }}
       />
     </Drawer.Navigator>

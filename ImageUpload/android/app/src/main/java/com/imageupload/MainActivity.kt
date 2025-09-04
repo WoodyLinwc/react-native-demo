@@ -1,6 +1,8 @@
 package com.imageupload
 
+import android.os.Bundle
 import com.facebook.react.ReactActivity
+import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
@@ -19,4 +21,12 @@ class MainActivity : ReactActivity() {
    */
   override fun createReactActivityDelegate(): ReactActivityDelegate =
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
+
+  /**
+   * Required for react-native-screens to avoid crashes related to View state
+   * not being persisted consistently across Activity restarts.
+   */
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(null)
+  }
 }

@@ -22,14 +22,14 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
         onPress={() => handleNavigate('Camera')}
         className="bg-blue-500 px-6 py-3 rounded mb-4"
       >
-        <Text className="text-white">Open Camera (using TouchableOpacity)</Text>
+        <Text className="text-white">Open Camera {`<TouchableOpacity>`}</Text>
       </TouchableOpacity>
 
       <Pressable
         onPress={() => handleNavigate('Supply')}
         className="bg-green-500 px-6 py-3 rounded"
       >
-        <Text className="text-white">Supply Screen (using Pressable)</Text>
+        <Text className="text-white">Supply Screen &lt;Pressable&gt;</Text>
       </Pressable>
     </View>
   );

@@ -1,5 +1,5 @@
 /**
- * Sample React Native App with Tab and Stack Navigation
+ * Sample React Native App with Drawer, Tab and Stack Navigation
  * https://github.com/facebook/react-native
  *
  * @format
@@ -17,12 +17,13 @@ import HomeScreen from './src/screens/HomeScreen';
 import CameraScreen from './src/screens/CameraScreen';
 import SupplyScreen from './src/screens/SupplyScreen';
 
-// Import tab navigator
-import TabNavigator from './src/navigation/TabNavigator';
+// Import drawer navigator
+import DrawerNavigator from './src/navigation/DrawerNavigator';
 
 // Define the navigation stack parameter list
 export type RootStackParamList = {
   Main: undefined;
+  DrawerMain: undefined;
   Home: undefined;
   Camera: undefined;
   Supply: undefined;
@@ -36,10 +37,10 @@ function App(): React.JSX.Element {
     <SafeAreaProvider>
       <StatusBar barStyle="dark-content" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Main">
+        <Stack.Navigator initialRouteName="DrawerMain">
           <Stack.Screen
-            name="Main"
-            component={TabNavigator}
+            name="DrawerMain"
+            component={DrawerNavigator}
             options={{ headerShown: false }}
           />
           <Stack.Screen

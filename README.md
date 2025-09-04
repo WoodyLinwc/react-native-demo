@@ -96,3 +96,19 @@ npm run android
 # React Navigation (Stack, Tab, and Drawer Navigator)
 
 - [Stack Navigator](https://github.com/WoodyLinwc/react-native-demo/commit/f3d477bbbb7f7f84227f770eb9fe4b7ef1f3fb8d)
+
+- [Tab Navigator](https://github.com/WoodyLinwc/react-native-demo/commit/647c9d23a16f9c408ba6b710d57a92faf64fc756)
+
+# Run
+
+In one terminal
+
+```
+npx react-native start --reset-cache
+```
+
+Open another one
+
+```
+npm run android
+```

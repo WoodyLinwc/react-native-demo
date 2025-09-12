@@ -81,6 +81,8 @@ npm run android
 
 ## 5. Notes
 
+- when creating RN project inside a folder, remember to `cd PROJECT` and `rm -rf .git` so you can upload it to GitHub.
+
 - **First build may be slow** because Gradle downloads dependencies and configures CMake.
 
 - Subsequent builds are much faster (cached by Gradle Daemon).

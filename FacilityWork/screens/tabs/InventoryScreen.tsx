@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-const SettingsScreen = () => {
+const InventoryScreen = () => {
   return (
     <View>
-      <Text>SettingsScreen</Text>
+      <Text>InventoryScreen</Text>
     </View>
   );
 };
 
-export default SettingsScreen;
+export default InventoryScreen;

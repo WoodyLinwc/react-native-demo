@@ -12,7 +12,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //
-import HomeScreen from './screens/HomeScreen';
+// import HomeScreen from './screens/HomeScreen';
 // drawer
 import SettingsScreen from './screens/drawer/SettingsScreen';
 // tabs
@@ -50,11 +50,6 @@ function App() {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{ headerShown: false }}
-          />
           <Stack.Screen
             name="Dashboard"
             component={DrawerNavigator}

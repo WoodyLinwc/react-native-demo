@@ -16,7 +16,6 @@ import HomeScreen from './screens/HomeScreen';
 
 import TaskScreen from './screens/tabs/TaskScreen';
 import InventoryScreen from './screens/tabs/InventoryScreen';
-// import HistoryScreen from './screens/tabs/HistoryScreen';
 import NotificationScreen from './screens/tabs/NotificationScreen';
 
 const Stack = createNativeStackNavigator();
@@ -28,7 +27,6 @@ function TabNavigator() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Tasks" component={TaskScreen} />
       <Tab.Screen name="Inventory" component={InventoryScreen} />
-      {/* <Tab.Screen name="History" component={HistoryScreen} /> */}
       <Tab.Screen name="Notifications" component={NotificationScreen} />
     </Tab.Navigator>
   );

@@ -5,14 +5,19 @@
  * @format
  */
 
+import React from 'react';
+import 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {
+  RootStackParamList,
+  DrawerParamList,
+  TabParamList,
+} from './types/navigation';
 
-//
-// import HomeScreen from './screens/HomeScreen';
 // drawer
 import SettingsScreen from './screens/drawer/SettingsScreen';
 // tabs
@@ -20,6 +25,7 @@ import HistoryScreen from './screens/tabs/HistoryScreen';
 import InventoryScreen from './screens/tabs/InventoryScreen';
 import NotificationScreen from './screens/tabs/NotificationScreen';
 import TaskScreen from './screens/tabs/TaskScreen';
+import HomeScreen from './screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -53,6 +59,11 @@ function App() {
           <Stack.Screen
             name="Dashboard"
             component={DrawerNavigator}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

@@ -7,6 +7,7 @@
 
 import React from 'react';
 import 'react-native-gesture-handler';
+import './global.css';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';

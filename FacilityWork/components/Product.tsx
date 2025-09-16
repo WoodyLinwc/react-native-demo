@@ -1,17 +1,20 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
+import { FlatList } from 'react-native-gesture-handler';
 
 const Product = ({ products }) => {
   return (
-    <View>
-      {products.map(p => (
-        <View key={p.id} style={style.container}>
-          <Text>{p.title}</Text>
-          <Text style={style.description}>{p.description}</Text>
+    <FlatList
+      data={products}
+      keyExtractor={item => item.id.toString()}
+      renderItem={({ item }) => (
+        <View style={style.container}>
+          <Text>{item.title}</Text>
+          <Text style={style.description}>{item.description}</Text>
 
           {/* Tags Array */}
           <View>
-            {p.tags.map((tag, index) => (
+            {item.tags.map((tag, index) => (
               <Text key={index} style={style.tab}>
                 {tag}
               </Text>
@@ -20,15 +23,15 @@ const Product = ({ products }) => {
 
           {/* Dimensions Object */}
           <View>
-            {Object.entries(p.dimensions).map(([key, value]) => (
+            {Object.entries(item.dimensions).map(([key, value]) => (
               <Text key={key} style={style.dimension}>
                 {key}: {value}
               </Text>
             ))}
           </View>
         </View>
-      ))}
-    </View>
+      )}
+    />
   );
 };
 

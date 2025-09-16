@@ -1,10 +1,13 @@
 import { View, Text } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import Product from '../../components/Product';
+import useFetch from '../../hooks/useFetch';
 
 const URL = 'https://dummyjson.com/products';
 
 const InventoryScreen = () => {
+  // const { data, error, loading } = useFetch(URL);
+
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -51,7 +54,7 @@ const InventoryScreen = () => {
     <View>
       <Text>Inventory Screen</Text>
 
-      <Text>Fetch first 3 products, </Text>
+      <Text>Fetch first 3 products (StyleSheet)</Text>
       <Product product={product.slice(0, 3)} />
     </View>
   );

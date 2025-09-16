@@ -20,6 +20,8 @@ import TaskScreen from './screens/tabs/TaskScreen';
 import InventoryScreen from './screens/tabs/InventoryScreen';
 import NotificationScreen from './screens/tabs/NotificationScreen';
 import SettingsScreen from './screens/drawer/SettingsScreen';
+import FeaturesScreen from './screens/drawer/FeaturesScreen';
+import FetchScreen from './screens/drawer/FetchScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -34,6 +36,8 @@ function DrawerNavigator() {
         options={{ title: 'Dashboard', headerShown: true }}
       />
       <Drawer.Screen name="Setting" component={SettingsScreen} />
+      <Drawer.Screen name="Feature" component={FeaturesScreen} />
+      <Drawer.Screen name="Fetch" component={FetchScreen} />
     </Drawer.Navigator>
   );
 }

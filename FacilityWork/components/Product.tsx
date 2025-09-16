@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 
-const Product = ({ product }) => {
+const Product = ({ products }) => {
   return (
     <View>
-      {product.map(p => (
+      {products.map(p => (
         <View key={p.id} style={style.container}>
           <Text>{p.title}</Text>
           <Text style={style.description}>{p.description}</Text>

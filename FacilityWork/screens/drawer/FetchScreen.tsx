@@ -50,7 +50,7 @@ const FetchScreen = () => {
   return (
     <View>
       <Text>Fetch Screen</Text>
-      <Product products={products.slice(0, 5)} />
+      <Product products={products.slice(0, 10)} />
     </View>
   );
 };
